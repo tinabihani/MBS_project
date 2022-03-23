@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Copse&display=swap" rel="stylesheet">
+    <title>Loan Prepayment Risk</title>
+    <style>
+      .topnav {
+          background-color: #333;
+          overflow: hidden;
+      }
+      .topnav a {
+          float: left;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          font-family: "Julius Sans One";
+      }
+      .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+      }
+      .topnav a.active {
+          background-color: #4CAF50;
+          color: white;
+      }
+      .topnav a.about{
+          float :right;
+      }
+      .header {
+            font-family: "Julius Sans One";
+            color:black;    
+            font-size: 50px;        
+            margin-left: 10.5%;
+            margin-top: 5%;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0; 
+        }
+        input{
+          transition: all 0.5s ease-in-out;
+          font-family: "Arvo";
+        }
+        label{
+          font-family: "Arvo";
+        }
+        input:focus{
+            transform: scale(1.1);
+        }
+        .btn-submit{
+            display: block;
+            width: 480px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            font-family: "Arvo";
+            text-decoration: none;
+            color: #333;
+            border: 2px solid #333;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            transition: all .35s;
+            padding-bottom: 40px;
+          }
+          .btn-submit span{
+            position: relative;
+            z-index: 2;
+          }
+          .btn-submit:after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #4CAF50;
+            transition: all .35s;
+            color: #333;
+          }
+          .btn-submit:hover{
+            color: #333;
+          }
+          .btn-submit:hover:after{
+            width: 100%;
+          }
+    </style>
+    
+</head>
+<body>
+  <nav class="topnav">
+    <a href="/home">Home</a>
+    <a class="active" href="/">Predict</a>
+    <a class = "about" href="/about">About</a>
+</nav>
+<h1 class = "header">PREDICT PREPAYMENT RISK</h1>
+    <div class="login">
+        <div style="margin-left: 150px;margin-top: 30px" class="col-md-5">
+        
+        <form action="/sub" method="POST">
+            <label for="CreditScore">CreditScore:</label><br>
+            <input type="number" name="CreditScore" placeholder="Credit Score" required="required"><br>
+            <label for="MIP">Mortgage Insurance Percentage:</label><br>
+            <input type="number" name="MIP" placeholder="MIP" required="required"><br>
+            <label for="Units">Units:</label><br>
+            <input type="number" name="Units" placeholder="Units" required="required"><br>
+            <label for="OCLTV">Original Combined Loan to Value Ratio:</label><br>
+            <input type="number" name="OCLTV" placeholder="OCLTV" required="required"><br>
+            <label for="DTI">Debt To Income Ratio:</label><br>
+            <input type="number" name="DTI" placeholder="DTI" required="required"><br>
+            <label for="OrigUPB">Original UPB:</label><br>
+            <input type="number" name="OrigUPB" placeholder="OrigUPB" required="required"><br>
+            <label for="LTV">Loan To Value Ratio:</label><br>
+            <input type="number" name="LTV" placeholder="LTV" required="required"><br>
+            <label for="OrigInterestRate">Original Interest Rate:</label><br>
+            <input type="number" name="OrigInterestRate" placeholder="OrigInterestRate" step ="any" required="required"><br>
+            <label for="MonthsInRepayment">Months In Repayment:</label><br>
+            <input type="number" name="MonthsInRepayment" placeholder="MonthsInRepayment" required="required"><br>
+            <label for="PPM">PPM</label><br>
+            <input type="number" name="PPM" placeholder="PPM" required="required"><br>
+              <button type="submit" class="btn btn-submit"><span>PREDICT</span></button>
+        </form>
+      </div>
+        <style>
+            body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login {
+  /* The image used */
+  background-image: url("https://www.kotak.com/content/dam/Kotak/article-images/hero-banners/Charges%20&%20Benefits%20of%20Prepayment%20&%20Part%20Payment%20of%20Home%20Loans%201440%20x%20400.jpg");
+
+  /* Control the height of the image */
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.col-md-5 {
+  position: relative;
+  margin-left: 0;
+  margin: 10px;
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+  input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="number"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+        </style>
+    
+         
+    
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Copse&display=swap" rel="stylesheet">
+    <title>Loan Prepayment Risk</title>
+    <style>
+      .topnav {
+          background-color: #333;
+          overflow: hidden;
+      }
+      .topnav a {
+          float: left;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          font-family: "Julius Sans One";
+      }
+      .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+      }
+      .topnav a.active {
+          background-color: #4CAF50;
+          color: white;
+      }
+      .topnav a.about{
+          float :right;
+      }
+      .header {
+            font-family: "Julius Sans One";
+            color:black;    
+            font-size: 50px;        
+            margin-left: 10.5%;
+            margin-top: 5%;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0; 
+        }
+        input{
+          transition: all 0.5s ease-in-out;
+          font-family: "Arvo";
+        }
+        label{
+          font-family: "Arvo";
+        }
+        input:focus{
+            transform: scale(1.1);
+        }
+        .btn-submit{
+            display: block;
+            width: 480px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            font-family: "Arvo";
+            text-decoration: none;
+            color: #333;
+            border: 2px solid #333;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+            transition: all .35s;
+            padding-bottom: 40px;
+          }
+          .btn-submit span{
+            position: relative;
+            z-index: 2;
+          }
+          .btn-submit:after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #4CAF50;
+            transition: all .35s;
+            color: #333;
+          }
+          .btn-submit:hover{
+            color: #333;
+          }
+          .btn-submit:hover:after{
+            width: 100%;
+          }
+    </style>
+    
+</head>
+<body>
+  <nav class="topnav">
+    <a href="/home">Home</a>
+    <a href="/">Predict</a>
+    <a class = "about active" href="/about">About</a>
+</nav>
+<div class="about-section">
+  <h1 ><b>About the Project</b></h1>
+  <h2 >Predicting Mortgage Backed Securities Prepayment using Machine Learning Methods</h2>
+  <p>A residential mortgage backed securities (MBS), is a fixed income security, and is one of the largest asset classes in the financial market.
+      These securities are sold to investors.Generally, home loans of all types are secured loans. The borrower must offer their property as a security to the lender. 
+      The property mortgaged acts as collateral until the borrower has repaid the loan in full. 
+      Mortgage loans are also commonly known as loans against property.
+  </p>
+  <h3 align="Left" ><u>Types of Mortgage Backed Securities</u></h3>
+    <p align="Left">1. Pass-Through Participation Certificate- It pays the holders their fair share of both principal and interest payments made on the mortgage bundles.</p>
+    <p align="Left">2. Collateralized Debt Obligation or “pay-through bond”- These are financial tools banks use to repackage individual loans into a product sold to investors on the secondary market. 
+      These packages consist of auto loans, credit card debt, mortgages, or corporate debt. To the investors, these products function like an MBS, even though they may or may not contain mortgages.</p>
+    <p align="Left">3. Collateralized Mortgage Obligation- These complicated investments are constructed by slicing a pool of mortgages into similar risk categories, known as tranches.The least risky tranches have more certain cash flows and a lower degree of exposure to default risk, while riskier tranches have more uncertain cash flows and greater exposure to default risk.
+
+    </p><h3 align="Left" ><u>Machine Learning Contribution</u></h3>
+    <p align="Left">- A mortgage prepayment penalty is&nbsp;a fee that some lenders charge when you pay all or part of your mortgage loan term off early.</p>
+    <p align="Left">- The penalty fee is an incentive for borrowers to pay back their principal slowly over a full term, allowing mortgage lenders to collect interest.</p>
+    <p align="Left">- There are many reasons why borrowers decide to make prepayments on their mortgage loan (many variables influence borrowers’ decision to prepay or not): 
+
+        Borrower characteristics: age, income, creditworthiness, employment status, marital status.
+        
+        Loan characteristics: loan amount, loan age, mortgage interest rate, prepayment penalty, geographical location, property type.
+        
+        Macroeconomic data: housing prices, market mortgage rates, month of the year.
+        </p>
+</div>
+        <style>
+            body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login {
+  /* The image used */
+  background-image: url("https://www.kotak.com/content/dam/Kotak/article-images/hero-banners/Charges%20&%20Benefits%20of%20Prepayment%20&%20Part%20Payment%20of%20Home%20Loans%201440%20x%20400.jpg");
+
+  /* Control the height of the image */
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.col-md-5 {
+  position: relative;
+  margin-left: 0;
+  margin: 10px;
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+  input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="number"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+        </style>
+    
+         
+    
+</body>
+</html>
